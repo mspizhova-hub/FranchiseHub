@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Сайт-франшизи — розрахунок стартових витрат</title>
+  <link rel="stylesheet" href="styles_Version1.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Франшизи: умови купівлі та приблизний розрахунок стартових витрат</h1>
+    <p class="lead">Оберіть тип франшизи та місто — система порахує приблизну суму (паушальний внесок + ремонт, обладнання, зарплати тощо).</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="field">
+        <label for="franchise">Тип франшизи</label>
+        <select id="franchise">
+          <!-- Варіанти підтягуються з JS -->
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="city">Місто</label>
+        <select id="city">
+          <option value="small">Мале місто (до 50k)</option>
+          <option value="regional">Регіональний центр</option>
+          <option value="big">Велике місто</option>
+          <option value="capital">Столиця</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="area">Площа приміщення (м²)</label>
+        <input id="area" type="number" min="10" value="50" />
+      </div>
+
+      <div class="field">
+        <label for="employees">Кількість працівників</label>
+        <input id="employees" type="number" min="1" value="3" />
+      </div>
+
+      <div class="field slider-field">
+        <label for="contingency">Відсоток непередбачених витрат (%)</label>
+        <input id="contingency" type="range" min="0" max="30" value="10" />
+        <span id="contingencyVal">10%</span>
+      </div>
+
+      <div class="actions">
+        <button id="calculate">Порахувати</button>
+        <button id="reset" class="muted">Скинути</button>
+        <a class="muted link" href="compare.html">Перейти до порівняння сценаріїв</a>
+      </div>
+    </section>
+
+    <section class="results" aria-live="polite">
+      <h2>Результат розрахунку</h2>
+      <div id="summary" class="card">
+        <p>Виберіть параметри й натисніть «Порахувати».</p>
+      </div>
+
+      <h3>Пояснення і умови</h3>
+      <div class="card info">
+        <p>Паушальний внесок — фіксована плата за право відкриття франшизи. Решта витрат — приблизні середні значення, котрі залежать від типу бізнесу, площі й міста. Розрахунок служить орієнтиром для попереднього планування.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Демонстраційний сайт — приблизні цифри, не є комерційною пропозицією.</small>
+  </footer>
+
+  <script src="script_Version1.js"></script>
+</body>
+</html>
