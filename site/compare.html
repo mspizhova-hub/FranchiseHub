@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Порівняння сценаріїв — Франшиза</title>
+  <link rel="stylesheet" href="styles_Version1.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Порівняння сценаріїв відкриття франшизи</h1>
+    <p class="lead">Порівняй кілька сценаріїв одночасно: Базовий, Розширений, Преміум. Збережи власні сценарії для подальшого використання.</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="field">
+        <label for="franchise_cmp">Тип франшизи</label>
+        <select id="franchise_cmp"></select>
+      </div>
+
+      <div class="field">
+        <label for="city_cmp">Місто</label>
+        <select id="city_cmp">
+          <option value="small">Мале місто (до 50k)</option>
+          <option value="regional">Регіональний центр</option>
+          <option value="big">Велике місто</option>
+          <option value="capital">Столиця</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="area_cmp">Площа приміщення (м²)</label>
+        <input id="area_cmp" type="number" min="10" value="50" />
+      </div>
+
+      <div class="field">
+        <label for="employees_cmp">Кількість працівників</label>
+        <input id="employees_cmp" type="number" min="1" value="3" />
+      </div>
+
+      <div class="presets">
+        <strong>Пресети сценаріїв</strong>
+        <div class="preset-list">
+          <button class="preset" data-key="basic">Базовий</button>
+          <button class="preset" data-key="extended">Розширений</button>
+          <button class="preset" data-key="premium">Преміум</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Сценарії для порівняння (редагуйте назви при потребі)</label>
+        <div class="scenario-row">
+          <input class="scenario-name" id="name_a" value="Базовий" />
+          <button id="save_a" class="small">Зберегти</button>
+        </div>
+        <div class="scenario-row">
+          <input class="scenario-name" id="name_b" value="Розширений" />
+          <button id="save_b" class="small">Зберегти</button>
+        </div>
+        <div class="scenario-row">
+          <input class="scenario-name" id="name_c" value="Преміум" />
+          <button id="save_c" class="small">Зберегти</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Збережені сценарії</label>
+        <div id="saved_list" class="card"></div>
+      </div>
+
+      <div class="actions">
+        <button id="compare">Порівняти</button>
+        <a class="muted link" href="index.html">Повернутись до розрахунку</a>
+      </div>
+    </section>
+
+    <section class="results">
+      <h2>Порівняння — підсумки</h2>
+      <div id="compare_table" class="card">
+        <p>Натисніть «Порівняти», щоб побачити таблицю порівняння трьох сценаріїв.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Збереження сценаріїв використовує localStorage вашого браузера.</small>
+  </footer>
+
+  <script src="script_Version1.js"></script>
+  <script src="compare_Version2.js"></script>
+</body>
+</html>
